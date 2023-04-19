@@ -1,7 +1,16 @@
 import Link from 'next/link';
 import Main from './components/menu'
 import Image from 'next/image'
+import useRouter from 'next/router'
+
+// export default function Home() {
+//   return <div>
+//       <Navbar/>
+//     </div>
+// }
 export default function Home() {
+
+  const router = useRouter;
 
   return (
     <div className="flex h-screen flex-col font-philo text-yellow">
@@ -9,14 +18,14 @@ export default function Home() {
         <div className="flex flex-col align-end">
           <text className="pl-20 pt-5 text-6xl">Permi.</text>
         </div>
-        <button class="rounded-md bg-yellow text-black text-4xl p-3 m-2 mr-4">Sign In</button>
+        <button class="rounded-md bg-yellow text-black text-4xl p-3 m-2 mr-4" onClick={() => router.push('./signin')}>Sign In</button>
       </div>
       <div className="flex flex-row grow overflow-hidden">
         <img className="w-screen" src="/sharon.png"></img>
         <div className="w-2/5 absolute p-20  0 flex flex-col">
           <div className="text-7xl leading-none">Say goodbye to running around, and hello to paperless authorization.</div>
           <div className="text-4xl leading-tight text-white pt-10 pb-10">With Permi, you can manage your requests, grant permission, and book halls inside your organisation—all in one place.</div>
-          <button className="w-2/5 text-4xl bg-yellow text-black rounded-md p-4">Get Started</button>
+          <button className="w-2/5 text-4xl bg-yellow text-black rounded-md p-4" onClick={() => router.push('./signin')}>Get Started</button>
         </div>
       </div>
     </div>
